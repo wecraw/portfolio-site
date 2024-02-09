@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+.row.no-gutters [class^='col-'] {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.vertical-center {
+  min-height: 100vh; /* Ensure row takes up at least the height of the viewport */
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+.full-height-row {
+  height: 100vh; /* Set height to 100% of viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  text-align: center; /* Optional: Center the image horizontally */
+  &.outer-mountain {
+    max-width: 95% !important;
+  }
+}
+
+.img-container img {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  max-height: 100%; /* Ensure image doesn't exceed container height */
+  vertical-align: middle; /* Vertically center the image */
+}
+
+.hover-effect {
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s ease; /* Transition for background color change */
+  &:hover {
+    background-color: #cccccc50;
+    transition: background-color 0.3s ease; /* Transition for background color change */
+  }
+}
+
+.flip {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

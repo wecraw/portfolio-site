@@ -1,0 +1,65 @@
+<div class="banner">Will Crawford</div>
+<div class="container">
+  <div class="row no-gutters">
+    <div
+      class="col-4 full-height-row hover-effect"
+      [ngClass]="{ 'fade-out': isFadeOut(0), 'puff-out-center-0': isPuffOut(0) }"
+    >
+      <div class="mountain">
+        <div class="label">
+          <div class="lines">
+            <div class="diagonal-line"></div>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="label-text">
+            <div class="label-actual">Resume</div>
+            <div class="label-altitude">14,432 ft.</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center img-container" (click)="onMountainClick(0)">
+          <img class="img-fluid outer-mountain" src="assets/mountain.png" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-4 full-height-row hover-effect"
+      [ngClass]="{ 'fade-out': isFadeOut(1), 'puff-out-center-1': isPuffOut(1) }"
+    >
+      <div class="mountain">
+        <div class="label">
+          <div class="lines">
+            <div class="diagonal-line"></div>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="label-text">
+            <div class="label-actual">Resume</div>
+            <div class="label-altitude">14,432 ft.</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center img-container" (click)="onMountainClick(1)">
+          <img class="img-fluid flip center-mountain" src="assets/mountain.png" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-4 full-height-row hover-effect"
+      [ngClass]="{ 'fade-out': isFadeOut(2), 'puff-out-center-1': isPuffOut(2) }"
+    >
+      <div class="mountain">
+        <div class="label">
+          <div class="lines">
+            <div class="diagonal-line"></div>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="label-text">
+            <div class="label-actual">Resume</div>
+            <div class="label-altitude">14,432 ft.</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center img-container" (click)="onMountainClick(2)">
+          <img class="img-fluid outer-mountain" src="assets/mountain.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
