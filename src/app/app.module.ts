@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
