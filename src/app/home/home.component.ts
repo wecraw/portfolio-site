@@ -20,6 +20,10 @@ export class HomeComponent {
     return this.fadeOuts[index];
   }
 
+  anyFadeOut() {
+    return this.fadeOuts.some((value) => value);
+  }
+
   isPuffOut(index: number) {
     return this.puffOuts[index];
   }

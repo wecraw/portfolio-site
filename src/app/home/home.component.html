@@ -1,4 +1,4 @@
-<div class="banner">Will Crawford</div>
+<div class="banner" [ngClass]="{ 'fade-out': anyFadeOut() }">Will Crawford</div>
 <div class="container">
   <div class="row no-gutters">
     <div
@@ -63,3 +63,5 @@
     </div>
   </div>
 </div>
+
+<div class="footer" [ngClass]="{ 'fade-out': anyFadeOut() }">©2024 - Contact</div>
