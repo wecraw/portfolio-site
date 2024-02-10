@@ -1,3 +1,7 @@
+@import 'bootstrap/scss/functions'; // Import Bootstrap's SCSS mixins next
+@import 'bootstrap/scss/variables'; // Import Bootstrap's SCSS mixins next
+@import 'bootstrap/scss/mixins'; // Import Bootstrap's SCSS mixins next
+
 .banner {
   position: absolute;
   width: 100%;
@@ -7,9 +11,43 @@
 .mountain {
   display: flex;
   flex-direction: column;
+  &.center {
+    margin-top: -90px;
+  }
+  @include media-breakpoint-between(lg, xl) {
+    &.center {
+      margin-top: -70px;
+    }
+  }
   .label {
     display: flex;
     justify-content: center;
+    &.first {
+      padding-left: 60px;
+      padding-bottom: 10px;
+    }
+    &.second {
+      padding-left: 210px;
+      padding-bottom: 10px;
+    }
+    &.third {
+      padding-left: 50px;
+      padding-bottom: 10px;
+    }
+    @include media-breakpoint-between(lg, xl) {
+      &.first {
+        padding-left: 75px;
+        padding-bottom: 10px;
+      }
+      &.second {
+        padding-left: 185px;
+        margin-bottom: -19px;
+      }
+      &.third {
+        padding-left: 75px;
+        padding-bottom: 8px;
+      }
+    }
     .lines {
       display: flex;
       margin-top: 23px;
@@ -44,9 +82,6 @@
   }
 }
 
-.center-mountain {
-  margin-top: 50px;
-}
 .outer-mountain {
   max-width: 95%;
 }
@@ -132,7 +167,6 @@
   }
 }
 
-// works for mountain 1 and 2
 .puff-out-center-1 {
   -webkit-animation: puff-out-center-1 1.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
   animation: puff-out-center-1 1.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
@@ -156,6 +190,49 @@
   }
 }
 @keyframes puff-out-center-1 {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    -webkit-transform-origin: 60% 40%;
+    transform-origin: 60% 40%;
+    filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(4);
+    transform: scale(4);
+    -webkit-filter: blur(0px);
+    -webkit-transform-origin: 60% 40%;
+    transform-origin: 60% 40%;
+    filter: blur(0px);
+    opacity: 0;
+  }
+}
+
+.puff-out-center-2 {
+  -webkit-animation: puff-out-center-2 1.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+  animation: puff-out-center-2 1.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+  background-color: transparent !important;
+}
+
+@-webkit-keyframes puff-out-center-2 {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+}
+@keyframes puff-out-center-2 {
   0% {
     -webkit-transform: scale(1);
     transform: scale(1);
