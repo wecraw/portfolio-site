@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   fadeOuts: boolean[] = [false, false, false];
   puffOuts: boolean[] = [false, false, false];
+
+  constructor(private router: Router) {}
 
   onMountainClick(index: number) {
     // Set fadeOuts to true for indexes not equal to index
@@ -26,5 +29,11 @@ export class HomeComponent {
 
   isPuffOut(index: number) {
     return this.puffOuts[index];
+  }
+
+  resumeNav() {
+    setTimeout(() => {
+      this.router.navigate(['/resume']);
+    }, 1500);
   }
 }
