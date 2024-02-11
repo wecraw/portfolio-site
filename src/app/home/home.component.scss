@@ -15,16 +15,30 @@
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
   position: absolute;
   width: 100%;
-  text-align: center;
   font-size: 12px;
   font-weight: bold;
   font-style: italic;
   font-family: 'Josefin Sans', sans-serif;
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   bottom: 0;
+  a {
+    padding: 25px;
+    line-height: 2px;
+    text-decoration: none;
+    color: black;
+    height: 30px;
+    span {
+      text-decoration: underline;
+    }
+    &:hover {
+      color: blue;
+    }
+  }
 }
 
 .mountain {
