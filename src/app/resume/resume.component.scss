@@ -30,6 +30,10 @@ img {
   display: flex; /* Use flexbox */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+
+  &:focus-visible {
+    outline-offset: 5px;
+  }
 }
 
 /* Extra small to small devices (phones to tablets, 576px and up) */
