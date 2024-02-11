@@ -1,3 +1,8 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+@import 'bootstrap/scss/functions'; // Import Bootstrap's SCSS mixins next
+@import 'bootstrap/scss/variables'; // Import Bootstrap's SCSS mixins next
+@import 'bootstrap/scss/mixins'; // Import Bootstrap's SCSS mixins next
+
 img {
   width: 100%;
   max-width: 900px;
@@ -12,12 +17,88 @@ img {
 }
 
 .download {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  height: 40px;
-  width: 40px;
+  top: 60px;
   border-radius: 20px;
+  color: #fff;
+  background: #007bff;
+  border: transparent;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s ease; /* Transition for background color */
+  position: absolute;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Extra small to small devices (phones to tablets, 576px and up) */
+@include media-breakpoint-up(xs) {
+  .download {
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+    font-size: 12pt;
+    /* Add your styles for extra small to small devices here */
+  }
+}
+
+/* Small to medium devices (tablets to desktops, 768px and up) */
+@include media-breakpoint-up(sm) {
+  .download {
+    top: 40px;
+    right: 50px;
+    height: 40px;
+    width: 40px;
+    font-size: 16pt;
+    /* Add your styles for small to medium devices here */
+  }
+}
+
+/* Small to medium devices (tablets to desktops, 768px and up) */
+@include media-breakpoint-up(md) {
+  .download {
+    top: 50px;
+    right: 60px;
+    /* Add your styles for small to medium devices here */
+  }
+}
+
+/* Medium to large devices (desktops to large desktops, 992px and up) */
+@include media-breakpoint-up(lg) {
+  .download {
+    right: 120px;
+    top: 60px;
+    /* Add your styles for medium to large devices here */
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .download {
+    right: 210px;
+    top: 60px;
+    /* Add your styles for medium to large devices here */
+  }
+}
+
+/* Large to extra large devices (large desktops to extra large desktops, 1200px and up) */
+@include media-breakpoint-up(xxl) {
+  .download {
+    right: 300px;
+    top: 60px;
+    /* Add your styles for large to extra large devices here */
+  }
+}
+
+.download:hover {
+  background-color: #4d94ff; /* Lighter blue */
+  transition: background-color 0.2s ease; /* Transition for background color */
+}
+
+.download:active {
+  background-color: #005cb3; /* Slightly darker blue */
+  transition: background-color 0.2s ease; /* Transition for background color */
 }
 
 .fade-in-fwd {
