@@ -17,6 +17,8 @@ export class HomeComponent {
     this.fadeOuts = this.fadeOuts.map((value, i) => (i !== index ? true : value));
     // Set puffOuts to true for index
     this.puffOuts = this.puffOuts.map((value, i) => (i === index ? true : value));
+
+    if (index === 1) this.resumeNav();
   }
 
   isFadeOut(index: number) {

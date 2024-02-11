@@ -40,6 +40,12 @@
     background-color: #cccccc50;
     transition: background-color 0.3s ease; /* Transition for background color change */
   }
+  &:focus-visible {
+    background-color: #cccccc50;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease; /* Transition for background color change */
+  }
 }
 
 .flip {
