@@ -18,7 +18,9 @@ export class HomeComponent {
     // Set puffOuts to true for index
     this.puffOuts = this.puffOuts.map((value, i) => (i === index ? true : value));
 
-    if (index === 1) this.resumeNav();
+    if (index === 0) this.timeoutNav('/about');
+    if (index === 1) this.timeoutNav('/resume');
+    if (index === 2) this.timeoutNav('/portfolio');
   }
 
   isFadeOut(index: number) {
@@ -33,9 +35,9 @@ export class HomeComponent {
     return this.puffOuts[index];
   }
 
-  resumeNav() {
+  timeoutNav(route: string) {
     setTimeout(() => {
-      this.router.navigate(['/resume']);
+      this.router.navigate([route]);
     }, 1500);
   }
 }
