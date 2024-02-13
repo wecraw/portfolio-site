@@ -7,7 +7,7 @@ img {
   width: 100%;
   max-width: 900px;
   margin-left: auto;
-  margin-top: 20px;
+  margin-top: 108px;
   margin-right: auto;
   margin-bottom: 20px;
   /* Horizontal shadow on the left side */
@@ -17,21 +17,26 @@ img {
 }
 
 .download {
-  top: 60px;
+  bottom: 60px;
+  right: 20px;
   border-radius: 20px;
-  color: #fff;
-  background: #007bff;
-  border: transparent;
+  color: black;
+  background: white;
+  border: 2px solid black;
   box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.08);
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease; /* Transition for background color */
-  position: absolute;
+  position: fixed;
   display: flex; /* Use flexbox */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
 
+  height: 40px;
+  width: 40px;
+  font-size: 16pt;
   &:focus-visible {
+    outline-color: blue;
     outline-offset: 5px;
   }
 }
@@ -39,7 +44,6 @@ img {
 /* Extra small to small devices (phones to tablets, 576px and up) */
 @include media-breakpoint-up(xs) {
   .download {
-    top: 30px;
     right: 30px;
     height: 30px;
     width: 30px;
@@ -51,7 +55,6 @@ img {
 /* Small to medium devices (tablets to desktops, 768px and up) */
 @include media-breakpoint-up(sm) {
   .download {
-    top: 40px;
     right: 50px;
     height: 40px;
     width: 40px;
@@ -63,7 +66,6 @@ img {
 /* Small to medium devices (tablets to desktops, 768px and up) */
 @include media-breakpoint-up(md) {
   .download {
-    top: 50px;
     right: 60px;
     /* Add your styles for small to medium devices here */
   }
@@ -73,7 +75,6 @@ img {
 @include media-breakpoint-up(lg) {
   .download {
     right: 120px;
-    top: 60px;
     /* Add your styles for medium to large devices here */
   }
 }
@@ -81,27 +82,25 @@ img {
 @include media-breakpoint-up(xl) {
   .download {
     right: 210px;
-    top: 60px;
     /* Add your styles for medium to large devices here */
   }
 }
 
-/* Large to extra large devices (large desktops to extra large desktops, 1200px and up) */
-@include media-breakpoint-up(xxl) {
-  .download {
-    right: 300px;
-    top: 60px;
-    /* Add your styles for large to extra large devices here */
-  }
-}
+// /* Large to extra large devices (large desktops to extra large desktops, 1200px and up) */
+// @include media-breakpoint-up(xxl) {
+//   .download {
+//     right: 300px;
+//     /* Add your styles for large to extra large devices here */
+//   }
+// }
 
 .download:hover {
-  background-color: #4d94ff; /* Lighter blue */
+  background-color: #ddd; /* Lighter blue */
   transition: background-color 0.2s ease; /* Transition for background color */
 }
 
 .download:active {
-  background-color: #005cb3; /* Slightly darker blue */
+  background-color: #bbb; /* Slightly darker blue */
   transition: background-color 0.2s ease; /* Transition for background color */
 }
 
