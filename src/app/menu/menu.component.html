@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div
+      class="col-4 full-height-row hover-effect"
+      [ngClass]="{ 'fade-out': isFadeOut(0), 'puff-out-center-0': isPuffOut(0) }"
+      tabindex="0"
+      (click)="onMountainClick(0)"
+      (keydown.enter)="onMountainClick(0)"
+    >
+      <div class="mountain">
+        <div class="label first">
+          <div class="lines">
+            <div class="diagonal-line"></div>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="label-text">
+            <div class="label-actual">{{ menuItems[0].label }}</div>
+            <div class="label-altitude">{{ menuItems[0].altitude }}</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center img-container">
+          <img class="img-fluid outer-mountain" src="assets/mountain.png" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-4 full-height-row hover-effect"
+      tabindex="0"
+      (click)="onMountainClick(1)"
+      (keydown.enter)="onMountainClick(1)"
+      [ngClass]="{ 'fade-out': isFadeOut(1), 'puff-out-center-1': isPuffOut(1) }"
+    >
+      <div class="mountain center">
+        <div class="label second">
+          <div class="lines">
+            <div class="diagonal-line"></div>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="label-text">
+            <div class="label-actual">{{ menuItems[1].label }}</div>
+            <div class="label-altitude">{{ menuItems[1].altitude }}</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center img-container">
+          <img class="img-fluid flip" src="assets/mountain.png" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-4 full-height-row hover-effect"
+      [ngClass]="{ 'fade-out': isFadeOut(2), 'puff-out-center-2': isPuffOut(2) }"
+      tabindex="0"
+      (click)="onMountainClick(2)"
+      (keydown.enter)="onMountainClick(2)"
+    >
+      <div class="mountain">
+        <div class="label third">
+          <div class="lines">
+            <div class="diagonal-line"></div>
+            <div class="horizontal-line"></div>
+          </div>
+          <div class="label-text">
+            <div class="label-actual">{{ menuItems[2].label }}</div>
+            <div class="label-altitude">{{ menuItems[2].altitude }}</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center img-container">
+          <img class="img-fluid outer-mountain" src="assets/mountain.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
