@@ -14,6 +14,15 @@
   margin-top: 30px;
 }
 
+.mtn-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
 .footer {
   display: flex;
   justify-content: center;

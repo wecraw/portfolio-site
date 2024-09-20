@@ -1,6 +1,7 @@
 <app-header [ngClass]="{ 'fade-out': fadeHeaderFooter }"></app-header>
 
-<app-menu [menuItems]="menuItems" (onFade)="onFadeHeaderFooter()"> </app-menu>
+<app-menu [menuItems]="menuItems" (onFade)="onFadeHeaderFooter()" [useCompactSize]="true">
+</app-menu>
 
 <div class="footer" [ngClass]="{ 'fade-out': fadeHeaderFooter }">
   <a href="mailto:will@ccrawford.org"> ©2024 - <span>Contact</span></a>

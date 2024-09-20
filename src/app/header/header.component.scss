@@ -4,13 +4,15 @@
   text-align: center;
   font-size: 28pt;
   font-weight: bold;
-  // font-style: italic;
   position: absolute;
+  display: flex;
   border-bottom: 1px solid black;
   background-color: white;
 
   .label {
     margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
     // font-family: 'Space Mono';
     font-family: 'Josefin Sans', sans-serif;
     margin-bottom: 13px;

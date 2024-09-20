@@ -9,6 +9,8 @@ import { menuItem } from '../menuItem';
 })
 export class MenuComponent {
   @Input() menuItems: menuItem[] = [];
+  @Input() useCompactSize: boolean = false;
+
   @Output() onFade = new EventEmitter<any>();
 
   fadeOuts: boolean[] = [false, false, false];
