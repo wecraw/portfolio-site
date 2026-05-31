@@ -7,9 +7,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'resume', component: ResumeComponent }, // Define the 'resume' route
-  { path: 'about', component: AboutComponent }, // Define the 'resume' route
-  { path: 'portfolio', component: PortfolioComponent }, // Define the 'resume' route
+  { path: 'resume', component: ResumeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'portfolio', component: PortfolioComponent },
 ];
 
 @NgModule({

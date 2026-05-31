@@ -9,8 +9,6 @@ import { menuItem } from '../menuItem';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  fadeOuts: boolean[] = [false, false, false];
-  puffOuts: boolean[] = [false, false, false];
   fadeHeaderFooter: boolean = false;
 
   menuItems: menuItem[] = [

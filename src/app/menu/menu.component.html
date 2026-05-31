@@ -1,6 +1,6 @@
 <ng-container *ngIf="!useCompactSize">
   <div class="container">
-    <div class="row no-gutters">
+    <div class="row g-0">
       <div
         class="col-4 full-height-row hover-effect"
         [ngClass]="{ 'fade-out': isFadeOut(0), 'puff-out-center-0': isPuffOut(0) }"
@@ -76,7 +76,7 @@
 
 <ng-container *ngIf="useCompactSize">
   <div class="container">
-    <div class="row no-gutters">
+    <div class="row g-0">
       <div
         class="col-4 full-height-row hover-effect"
         [ngClass]="{ 'fade-out': isFadeOut(0), 'puff-out-center-0': isPuffOut(0) }"
