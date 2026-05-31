@@ -1,12 +1,16 @@
 <ng-container *ngIf="!useCompactSize">
-  <div class="container">
+  <div
+    #scene
+    class="container scene"
+    [ngClass]="{ 'camera-zoom': zooming }"
+    [style.transform-origin]="zoomOrigin"
+  >
     <div class="row g-0">
       <div
         class="col-4 full-height-row hover-effect"
-        [ngClass]="{ 'fade-out': isFadeOut(0), 'puff-out-center-0': isPuffOut(0) }"
         tabindex="0"
-        (click)="onMountainClick(0)"
-        (keydown.enter)="onMountainClick(0)"
+        (click)="onMountainClick(0, $event)"
+        (keydown.enter)="onMountainClick(0, $event)"
       >
         <div class="mountain">
           <div class="label first">
@@ -27,9 +31,8 @@
       <div
         class="col-4 full-height-row hover-effect"
         tabindex="0"
-        (click)="onMountainClick(1)"
-        (keydown.enter)="onMountainClick(1)"
-        [ngClass]="{ 'fade-out': isFadeOut(1), 'puff-out-center-1': isPuffOut(1) }"
+        (click)="onMountainClick(1, $event)"
+        (keydown.enter)="onMountainClick(1, $event)"
       >
         <div class="mountain center">
           <div class="label second">
@@ -49,10 +52,9 @@
       </div>
       <div
         class="col-4 full-height-row hover-effect"
-        [ngClass]="{ 'fade-out': isFadeOut(2), 'puff-out-center-2': isPuffOut(2) }"
         tabindex="0"
-        (click)="onMountainClick(2)"
-        (keydown.enter)="onMountainClick(2)"
+        (click)="onMountainClick(2, $event)"
+        (keydown.enter)="onMountainClick(2, $event)"
       >
         <div class="mountain">
           <div class="label third">
@@ -75,14 +77,18 @@
 </ng-container>
 
 <ng-container *ngIf="useCompactSize">
-  <div class="container">
+  <div
+    #scene
+    class="container scene"
+    [ngClass]="{ 'camera-zoom': zooming }"
+    [style.transform-origin]="zoomOrigin"
+  >
     <div class="row g-0">
       <div
         class="col-4 full-height-row hover-effect"
-        [ngClass]="{ 'fade-out': isFadeOut(0), 'puff-out-center-0': isPuffOut(0) }"
         tabindex="0"
-        (click)="onMountainClick(0)"
-        (keydown.enter)="onMountainClick(0)"
+        (click)="onMountainClick(0, $event)"
+        (keydown.enter)="onMountainClick(0, $event)"
       >
         <div class="mountain">
           <div class="label first">
@@ -100,9 +106,8 @@
       <div
         class="col-4 full-height-row hover-effect"
         tabindex="0"
-        (click)="onMountainClick(1)"
-        (keydown.enter)="onMountainClick(1)"
-        [ngClass]="{ 'fade-out': isFadeOut(1), 'puff-out-center-1': isPuffOut(1) }"
+        (click)="onMountainClick(1, $event)"
+        (keydown.enter)="onMountainClick(1, $event)"
       >
         <div class="mountain center">
           <div class="label second">
@@ -115,17 +120,13 @@
               <div class="label-altitude">{{ menuItems[1].altitude }}</div>
             </div>
           </div>
-          <div class="d-flex justify-content-center img-container">
-            <!-- <img class="img-fluid flip" src="assets/mountain.png" /> -->
-          </div>
         </div>
       </div>
       <div
         class="col-4 full-height-row hover-effect"
-        [ngClass]="{ 'fade-out': isFadeOut(2), 'puff-out-center-2': isPuffOut(2) }"
         tabindex="0"
-        (click)="onMountainClick(2)"
-        (keydown.enter)="onMountainClick(2)"
+        (click)="onMountainClick(2, $event)"
+        (keydown.enter)="onMountainClick(2, $event)"
       >
         <div class="mountain">
           <div class="label third">
@@ -142,7 +143,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 position-relative" [ngClass]="{ 'puff-out-center-1': isPuffOut(1) }">
+      <div class="col-12 position-relative">
         <img class="flip no-pointer-events mtn-bg" src="assets/mountain.png" />
       </div>
     </div>

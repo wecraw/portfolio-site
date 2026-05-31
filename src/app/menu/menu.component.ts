@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { menuItem } from '../menuItem';
 
@@ -14,28 +14,40 @@ export class MenuComponent {
 
   @Output() onFade = new EventEmitter<any>();
 
-  fadeOuts: boolean[] = [false, false, false];
-  puffOuts: boolean[] = [false, false, false];
+  @ViewChild('scene') scene?: ElementRef<HTMLElement>;
+
+  // Camera-zoom state: the whole scene (mountain + labels) zooms toward the
+  // clicked label as one static image, so nothing drifts relative to anything.
+  zooming = false;
+  zoomOrigin = '50% 50%';
 
   constructor(private router: Router) {}
 
-  onMountainClick(index: number) {
-    // Set fadeOuts to true for indexes not equal to index
-    this.fadeOuts = this.fadeOuts.map((value, i) => (i !== index ? true : value));
-    // Set puffOuts to true for index
-    this.puffOuts = this.puffOuts.map((value, i) => (i === index ? true : value));
+  onMountainClick(index: number, event?: Event) {
+    if (this.zooming) return;
+
+    this.zoomOrigin = this.computeZoomOrigin(event);
+    this.zooming = true;
 
     this.onFade.emit();
 
     this.timeoutNav(this.menuItems[index].route);
   }
 
-  isFadeOut(index: number) {
-    return this.fadeOuts[index];
-  }
+  // Point the camera at the clicked label, expressed as a transform-origin
+  // percentage relative to the scene box.
+  private computeZoomOrigin(event?: Event): string {
+    const sceneEl = this.scene?.nativeElement;
+    const target = event?.currentTarget as HTMLElement | undefined;
+    if (!sceneEl || !target) return '50% 50%';
 
-  isPuffOut(index: number) {
-    return this.puffOuts[index];
+    const focus = (target.querySelector('.label') as HTMLElement | null) ?? target;
+    const scene = sceneEl.getBoundingClientRect();
+    const rect = focus.getBoundingClientRect();
+
+    const x = ((rect.left + rect.width / 2 - scene.left) / scene.width) * 100;
+    const y = ((rect.top + rect.height / 2 - scene.top) / scene.height) * 100;
+    return `${x}% ${y}%`;
   }
 
   timeoutNav(route: string) {
