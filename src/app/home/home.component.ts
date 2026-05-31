@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { menuItem } from '../menuItem';
 
 @Component({
+  standalone: false,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
