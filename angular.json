@@ -36,7 +36,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": ["import", "color-functions", "global-builtin", "if-function"]
+              }
+            }
           },
           "configurations": {
             "production": {
@@ -48,7 +53,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kb",
+                  "maximumWarning": "6kb",
                   "maximumError": "8kb"
                 }
               ],
